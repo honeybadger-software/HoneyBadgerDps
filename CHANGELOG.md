@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 - 2026-10-27
+
+- Author line in `[Info]` is now `Honeybadgermods`, the uMod account name, as uMod's submission guidelines require.
+  The studio is still Honey Badger Software; nothing else in the plugin changed.
+- Licence files split: `LICENSE` is the plain MIT text for the code; the band artwork terms moved to `ART-LICENSE.md`.
+- README: the band is four PNG files, not five.
+
 ## 1.0.0 - 2026-10-26 - first public release
 
 - Settings menu on `/dps`: METER on/off, STYLE art/text, HIT POP on/off, RESET SESSION, with a live preview of the band.

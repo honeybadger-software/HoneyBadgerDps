@@ -29,7 +29,7 @@ with exactly the health it took. Damage to yourself never counts.
 ## Install
 
 1. Drop `HoneyBadgerDps.cs` into `oxide/plugins/` (Oxide) or `carbon/plugins/` (Carbon). It compiles on the spot.
-2. Watch the console for `Loaded plugin Honey Badger DPS Meter v1.0.0`.
+2. Watch the console for `Loaded plugin Honey Badger DPS Meter v1.0.1`.
 3. Done. Everyone gets the band the next time they wake up. Change the defaults in the config if you want it off until a
    player opts in.
 
@@ -101,7 +101,7 @@ Grant with `oxide.grant user <steamid64> honeybadgerdps.use` (Carbon accepts the
 
 ## Hosting the art yourself
 
-The band is five PNGs. By default every client downloads them straight from `honeybadger.software` (a static CDN, cached
+The band is four PNGs. By default every client downloads them straight from `honeybadger.software` (a static CDN, cached
 by URL on the client). To serve them from your own host:
 
 1. Copy `band_frame_cleaned_v3.png`, `badge.png`, `body_silhouette.png` and `hitpop_skull_cleaned.png` from
@@ -137,5 +137,5 @@ three seconds, on server save and on unload.
 
 ## Credits and licence
 
-Honey Badger Software. MIT licence, see `LICENSE`. Artwork is licensed for use with this plugin, including self-hosted
-copies. Issues and ideas: https://honeybadger.software/contact.html
+Honey Badger Software, author line `Honeybadgermods`. Code: MIT licence, see `LICENSE`. Artwork: see `ART-LICENSE.md`; the band
+images are licensed for use with this plugin, including self-hosted copies. Issues and ideas: https://honeybadger.software/contact.html

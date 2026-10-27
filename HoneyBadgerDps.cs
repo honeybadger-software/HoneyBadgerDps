@@ -1,4 +1,4 @@
-// HoneyBadgerDps.cs  -  Honey Badger DPS Meter v1.0.0
+// HoneyBadgerDps.cs  -  Honey Badger DPS Meter v1.0.1
 // Rust (Facepunch) server plugin.  Oxide API, runs under Carbon and Oxide/uMod.  MIT licence (see LICENSE).
 // Home: https://honeybadger.software   -   Honey Badger Software
 //
@@ -43,7 +43,7 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("Honey Badger DPS Meter", "Honey Badger Software", "1.0.0")]
+    [Info("Honey Badger DPS Meter", "Honeybadgermods", "1.0.1")]
     [Description("Live on-screen damage band: DPS, headshots, last hit with zone and range, target HP, accuracy and weapon, measured from damage that really landed")]
     public class HoneyBadgerDps : RustPlugin
     {
