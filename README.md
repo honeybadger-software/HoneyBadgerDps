@@ -4,9 +4,9 @@ A live on-screen damage band for Rust servers. One `.cs` file, free, MIT license
 
 Home and updates: **https://honeybadger.software**
 
-![The band](screenshots/band-art.png)
+![The band in game](screenshots/band-ingame.png)
 
-*The band as the plugin draws it, composed from the plugin's own art files with its own cell geometry (sample numbers). In-game captures follow in the next update.*
+*Real frame from a Carbon server, 1920x1080, 2026-10-27 ([full frame](screenshots/ingame-full.jpg)). `screenshots/band-art.png` shows the art pack on its own.*
 
 ## What players see
 

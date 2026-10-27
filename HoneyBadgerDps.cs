@@ -195,6 +195,13 @@ namespace Oxide.Plugins
                 ["Band.Target"] = "TARGET",
                 ["Band.Hp"] = "{0} HP",
                 ["Band.Acc"] = "ACC %",
+                ["Target.Scientist"] = "Scientist",
+                ["Target.HeavyScientist"] = "Heavy Scientist",
+                ["Target.TunnelDweller"] = "Tunnel Dweller",
+                ["Target.Dweller"] = "Dweller",
+                ["Target.Bandit"] = "Bandit",
+                ["Target.Npc"] = "NPC",
+                ["Target.Bradley"] = "Bradley",
                 ["Menu.Brand"] = "HONEY BADGER",
                 ["Menu.Title"] = "DPS METER",
                 ["Menu.Preview"] = "LIVE PREVIEW",
@@ -429,7 +436,7 @@ namespace Oxide.Plugins
                     Head = info.isHeadshot,
                     Zone = info.isHeadshot ? "HEADSHOT" : ((int)info.boneArea < 0 ? "BODY" : info.boneArea.ToString().ToUpperInvariant()),   // animals report -1
                     Distance = info.ProjectileDistance > 0f ? info.ProjectileDistance : Vector3.Distance(info.PointStart, info.HitPositionWorld),
-                    TargetName = (entity as BasePlayer)?.displayName ?? entity.ShortPrefabName,
+                    TargetName = TargetLabel(entity, attacker),
                     Weapon = attacker.GetActiveItem()?.info?.displayName?.english ?? "--",
                     Projectile = info.IsProjectile(),
                     ProjectileId = info.ProjectileID      // 0 for melee; unique per fired projectile
@@ -682,6 +689,39 @@ namespace Oxide.Plugins
 
         private static string N(float value) => value.ToString("0.###", CultureInfo.InvariantCulture);
         private string Asset(string file) => _config.Art.BaseUrl + file + "?v=" + _config.Art.CacheTag;
+
+        // What the TARGET cell shows.  Real players keep their name.  Rust names its NPC players by their bot id
+        // (the band read "511" in the first live capture), so scientists and dwellers get a label from their prefab
+        // instead.  Anything else (animals, buildings, deployables) gets its prefab name tidied:
+        // "wall.external.high.stone" -> "Wall External High Stone".  The viewer picks the language.
+        private string TargetLabel(BaseCombatEntity entity, BasePlayer viewer)
+        {
+            BasePlayer victim = entity as BasePlayer;
+            if (victim != null && !victim.IsNpc) return victim.displayName;
+            string prefab = entity.ShortPrefabName ?? "";
+            if (victim != null)
+            {
+                if (prefab.Contains("heavy")) return Msg("Target.HeavyScientist", viewer);
+                if (prefab.Contains("tunneldweller")) return Msg("Target.TunnelDweller", viewer);
+                if (prefab.Contains("dweller")) return Msg("Target.Dweller", viewer);
+                if (prefab.Contains("bandit")) return Msg("Target.Bandit", viewer);
+                if (prefab.Contains("scientist")) return Msg("Target.Scientist", viewer);
+                return Msg("Target.Npc", viewer);
+            }
+            if (entity is BradleyAPC) return Msg("Target.Bradley", viewer);
+            return PrettyPrefab(prefab);
+        }
+
+        private static string PrettyPrefab(string prefab)
+        {
+            if (string.IsNullOrEmpty(prefab)) return "--";
+            foreach (string suffix in new[] { ".deployed", ".entity", "_deployed", ".static" })
+                if (prefab.EndsWith(suffix)) prefab = prefab.Substring(0, prefab.Length - suffix.Length);
+            string[] words = prefab.Replace('.', ' ').Replace('_', ' ').Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < words.Length; i++)
+                words[i] = char.ToUpperInvariant(words[i][0]) + words[i].Substring(1);
+            return words.Length == 0 ? "--" : string.Join(" ", words);
+        }
 
         private static string SafeText(string text)
         {

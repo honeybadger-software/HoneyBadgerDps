@@ -10,6 +10,9 @@
 - Permissions `honeybadgerdps.use` (only enforced when the config asks for it) and `honeybadgerdps.admin`.
 - The damage hooks are only subscribed while at least one meter is on screen; nothing runs per hit otherwise.
 - Hits on corpses never count; buildings and deployables are off by default.
+- TARGET names: players keep their name; Rust's NPC players (named by bot id, e.g. "511") show Scientist, Heavy
+  Scientist, Tunnel Dweller, Dweller or Bandit from their prefab; animals and structures show a tidied prefab name
+  ("Stag", "Wall External High Stone"). All of it is in the lang file (`Target.*`).
 - Console commands renamed to `hbdps.menu`, `hbdps.toggle`, `hbdps.set`, `hbdps.reset`, `hbdps.probe`.
   (The old `hb.menu` / `hb.give` loadout commands moved to a separate admin-only test plugin and are not part of this release.)
 
