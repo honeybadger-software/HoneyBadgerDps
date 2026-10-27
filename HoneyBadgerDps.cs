@@ -1,6 +1,6 @@
-// HoneyBadgerDps.cs  -  Honey Badger DPS Meter v1.0.1
+// HoneyBadgerDps.cs  -  HoneyBadger DPS Meter v1.0.2
 // Rust (Facepunch) server plugin.  Oxide API, runs under Carbon and Oxide/uMod.  MIT licence (see LICENSE).
-// Home: https://honeybadger.software   -   Honey Badger Software
+// Home: https://honeybadger.software   -   HoneyBadger Software
 //
 // WHAT THE PLAYER SEES
 //   The band    a painted top-centre card, on for everyone when they wake up (configurable): badge, DPS,
@@ -43,7 +43,7 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("Honey Badger DPS Meter", "Honeybadgermods", "1.0.1")]
+    [Info("HoneyBadger DPS Meter", "Honeybadgermods", "1.0.2")]
     [Description("Live on-screen damage band: DPS, headshots, last hit with zone and range, target HP, accuracy and weapon, measured from damage that really landed")]
     public class HoneyBadgerDps : RustPlugin
     {
@@ -61,7 +61,7 @@ namespace Oxide.Plugins
         // The band art is 1305 x 150 source pixels drawn 110 units tall on the 1280 x 720 CUI reference screen.
         private const float BandSourceScale = 110f / 158.203f;
 
-        // Palette: the approved Honey Badger HUD card.  CUI colours are "r g b a" in 0..1.
+        // Palette: the approved HoneyBadger HUD card.  CUI colours are "r g b a" in 0..1.
         private const string Charcoal = "0.055 0.059 0.067 1";       // #0E0F11
         private const string CharcoalDim = "0.055 0.059 0.067 0.97";
         private const string Amber = "0.961 0.722 0.180 1";          // #F5B82E

@@ -1,9 +1,17 @@
 # Changelog
 
+## 1.0.2 - 2026-10-27
+
+Maintenance release. No behaviour change.
+
+- Brand spelling: the plugin is now "HoneyBadger DPS Meter" and the studio is HoneyBadger Software, one word, in the
+  `[Info]` line, the console load line, the README and the licence files. Config keys, lang keys, permissions and the
+  chat command are unchanged, so an in-place update keeps every setting.
+
 ## 1.0.1 - 2026-10-27
 
 - Author line in `[Info]` is now `Honeybadgermods`, the uMod account name, as uMod's submission guidelines require.
-  The studio is still Honey Badger Software; nothing else in the plugin changed.
+  The studio is still HoneyBadger Software; nothing else in the plugin changed.
 - Licence files split: `LICENSE` is the plain MIT text for the code; the band artwork terms moved to `ART-LICENSE.md`.
 - README: the band is four PNG files, not five.
 
@@ -23,7 +31,7 @@
 - Console commands renamed to `hbdps.menu`, `hbdps.toggle`, `hbdps.set`, `hbdps.reset`, `hbdps.probe`.
   (The old `hb.menu` / `hb.give` loadout commands moved to a separate admin-only test plugin and are not part of this release.)
 
-## 0.2.x - 2026-10-13 to 2026-10-14 - private builds on the Honey Badger server
+## 0.2.x - 2026-10-13 to 2026-10-14 - private builds on the HoneyBadger server
 
 - Painted band art, hit pop moved out of the crosshair, per-player on/off memory, `/dps text` fallback.
 

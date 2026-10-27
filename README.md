@@ -1,4 +1,4 @@
-# Honey Badger DPS Meter
+# HoneyBadger DPS Meter
 
 A live on-screen damage band for Rust servers. One `.cs` file, free, MIT licensed. Runs under **Carbon** and **Oxide/uMod**.
 
@@ -29,7 +29,7 @@ with exactly the health it took. Damage to yourself never counts.
 ## Install
 
 1. Drop `HoneyBadgerDps.cs` into `oxide/plugins/` (Oxide) or `carbon/plugins/` (Carbon). It compiles on the spot.
-2. Watch the console for `Loaded plugin Honey Badger DPS Meter v1.0.1`.
+2. Watch the console for `Loaded plugin HoneyBadger DPS Meter v1.0.2`.
 3. Done. Everyone gets the band the next time they wake up. Change the defaults in the config if you want it off until a
    player opts in.
 
@@ -137,5 +137,5 @@ three seconds, on server save and on unload.
 
 ## Credits and licence
 
-Honey Badger Software, author line `Honeybadgermods`. Code: MIT licence, see `LICENSE`. Artwork: see `ART-LICENSE.md`; the band
+HoneyBadger Software, author line `Honeybadgermods`. Code: MIT licence, see `LICENSE`. Artwork: see `ART-LICENSE.md`; the band
 images are licensed for use with this plugin, including self-hosted copies. Issues and ideas: https://honeybadger.software/contact.html
