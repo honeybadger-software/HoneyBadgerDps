@@ -1,0 +1,24 @@
+{
+  "Meter": {
+    "On by default for every player": true,
+    "Require the permission honeybadgerdps.use": false,
+    "DPS window in seconds": 5.0,
+    "Refresh every N seconds": 0.5,
+    "Count hits on NPCs (scientists)": true,
+    "Count hits on animals": true,
+    "Count hits on buildings and deployables": false,
+    "Count hits on vehicles, helicopters and Bradley": true
+  },
+  "Art": {
+    "Enabled (false = plain text meter for everyone)": true,
+    "Image base URL (https, ends with /)": "https://honeybadger.software/assets/hud/v1/",
+    "Image cache tag (change it after replacing the images)": "1",
+    "Band distance from the top of the screen (1280x720 units)": 48.0,
+    "Band scale": 1.0
+  },
+  "Hit pop": {
+    "Enabled": true,
+    "Seconds on screen": 0.9
+  },
+  "Chat hint the first time a player wakes up": true
+}
